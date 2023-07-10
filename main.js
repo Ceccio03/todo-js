@@ -50,7 +50,7 @@ function render2() {
     for (let i = 0; i < manager.todoArray.length; i++) {
         const todo = manager.todoArray[i];
         let additionalClass = '';
-        
+
         if (todo.isCompleted) {
             additionalClass = 'todo-completed';
         }
@@ -64,8 +64,10 @@ function render2() {
     }
 
     for (let i = 0; i < manager.todoArray.length; i++) {
-        const element = array[i];
-        
+        const todo = manager.todoArray[i];
+        const completeBtn = document.getElementById('complete-btn' + i);
+
+        completeBtn.addEventListener('click', () => {todo.isCompleted = !todo.isCompleted; render2();});
     }
 }
 render2();
