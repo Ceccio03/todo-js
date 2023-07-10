@@ -81,3 +81,6 @@ function orderByDate() {
     manager.orderTodosByDate();
     render();
 }
+
+// 1) aggiungere il tasto cancella su ogni todo
+// 2) aggiungere la possibiltà di aggiungere
