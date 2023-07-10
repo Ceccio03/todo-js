@@ -42,18 +42,33 @@ function render() {
 }
 render();
 
-// function render2() {
-//     const todoContainer = document.getElementById('todo-container'); 
+function render2() {
+    const todoContainer = document.getElementById('todo-container'); 
 
-//     todoContainer.innerHTML = '';
+    todoContainer.innerHTML = '';
 
-//     for (const todo of manager.todoArray) {
-//         const template = `<div class="todo-card ${todo.isCompleted ? 'todo-completed' : ''}"><strong>${todo.title}</strong><span>${todo.creationDate.toISOString()}</span></div>`;
+    for (let i = 0; i < manager.todoArray.length; i++) {
+        const todo = manager.todoArray[i];
+        let additionalClass = '';
+        
+        if (todo.isCompleted) {
+            additionalClass = 'todo-completed';
+        }
 
-//         todoContainer.innerHTML += template;
-//     }
-// }
-// render2();
+        const template = `<div class="todo-card ${additionalClass}"><strong>${todo.title}</strong><span>${todo.creationDate.toISOString()}</span><button id="complete-btn"${i}>completato</button></div>`;
+    
+
+//     const template = `<div class="todo-card ${todo.isCompleted ? 'todo-completed' : ''}"><strong>${todo.title}</strong><span>${todo.creationDate.toISOString()}</span></div>`;
+
+    todoContainer.innerHTML += template;
+    }
+
+    for (let i = 0; i < manager.todoArray.length; i++) {
+        const element = array[i];
+        
+    }
+}
+render2();
 
 function orderByTitle() {
     manager.orderTodosByTitle();
