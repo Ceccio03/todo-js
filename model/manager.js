@@ -1,4 +1,4 @@
-class TodosList {
+class Manager {
     constructor(todoArray = []) {
         this.todoArray = todoArray;
     }
