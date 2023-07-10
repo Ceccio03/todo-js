@@ -6,7 +6,7 @@ class Todo {
     }
 
     compareByTitle(todo) {
-        return this.title.localCompare(todo.title);
+        return this.title.localeCompare(todo.title);
     }
 
     compareByDate(todo) {
