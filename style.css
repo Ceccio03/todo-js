@@ -34,6 +34,14 @@ main {
     justify-content: space-between;
 }
 
+.spacer {
+    flex: 1;
+}
+
 .add-todo-container {
-    display: flex;
+    padding: 8px;
+}
+
+#add-todo-input:focus {
+    outline: none;
 }
