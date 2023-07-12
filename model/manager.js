@@ -1,10 +1,10 @@
 class Manager {
     constructor(todoArray) {
-        if (todoArray) {
-            const todoArray = StorageService.loadTodos();
+        if (!todoArray) {
+            const todos = StorageService.loadTodos();
 
-            if (todoArray) {
-                this.todoArray = todoArray;
+            if (todos) {
+                this.todoArray = todos;
             } else {
                 this.todoArray = [];
             }
