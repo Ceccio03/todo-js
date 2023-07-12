@@ -1,9 +1,14 @@
 // console.log(DataServices.getData());
 
-const todos = DataServices.getData();
-const manager = new Manager(todos);
+const todos = StorageService.loadData();
+let manager;
+if (todos) {
+    manager = new Manager(todos);
+} else {
+    manager = new Manager();
+}
 
-// console.log(todosList);
+console.log(document);
 
 function render() {
     const todoContainer = document.getElementById('todo-container'); 
