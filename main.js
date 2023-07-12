@@ -99,11 +99,20 @@ function orderByDate() {
 }
 
 function addTodo() {
-    const title = document.getElementById('add-todo-input');
-    const newTodoTitle = title.value;
+    // const title = document.getElementById('add-todo-input');
+    // const newTodoTitle = title.value;
     
-    if (newTodoTitle.trim() !== '') {
-        manager.addTodoWithTitle(newTodoTitle);
+    // if (newTodoTitle.trim() !== '') {
+    //     manager.addTodoWithTitle(newTodoTitle);
+    // }
+    // render();
+
+    let inputValue = document.getElementById('add-todo-input').value;
+
+    if (inputValue.trim()) {
+        manager.addTodoWithTitle(inputValue);
+
+        document.getElementById('add-todo-input').value = '';
     }
     render();
 }
