@@ -15,6 +15,14 @@ class Manager {
         this.todoArray.sort((todo1, todo2) => todo1.compareByDate(todo2));
     }
 
+    changeCompleteStatus() {
+        const todo = this.todoArray[index];
+
+        todo.isCompleted = !todo.isCompleted;
+
+        StorageService.saveData(this.todoArray);
+    }
+
     deleteTodo(index) {
         this.todoArray.splice(index, 1);
 
