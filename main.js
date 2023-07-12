@@ -43,7 +43,7 @@ function render() {
         const completeNode = document.createTextNode(todo.isCompleted ? 'Completato' : ' Da Completare');
         completeBtn.addEventListener('click', () => {
             todo.isCompleted = !todo.isCompleted;
-            StorageService.saveData(manager.todoArray);
+            // StorageService.saveData(manager.todoArray);
             render();
         });
 
@@ -54,7 +54,7 @@ function render() {
         const deleteNode = document.createTextNode('Elimina');
         deleteBtn.addEventListener('click', () => {
             manager.deleteTodo(i);
-            StorageService.saveData(manager.todoArray);
+            // StorageService.saveData(manager.todoArray);
             render();
         });
         

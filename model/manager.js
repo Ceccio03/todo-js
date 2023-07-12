@@ -17,11 +17,15 @@ class Manager {
 
     deleteTodo(index) {
         this.todoArray.splice(index, 1);
+
+        StorageService.saveData(this.todoArray);
     }
 
     addTodoWithTitle(title) {
         const newTodo = new Todo(title);
         
         this.addToDo(newTodo);
+
+        StorageService.saveData(this.todoArray);
     }
 }
