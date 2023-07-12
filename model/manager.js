@@ -1,6 +1,16 @@
 class Manager {
-    constructor(todoArray = []) {
-        this.todoArray = todoArray;
+    constructor(todoArray) {
+        if (todoArray) {
+            const todoArray = StorageService.loadTodos();
+
+            if (todoArray) {
+                this.todoArray = todoArray;
+            } else {
+                this.todoArray = [];
+            }
+        } else {
+            this.todoArray = todoArray;
+        }
     }
 
     addToDo(todo) {
