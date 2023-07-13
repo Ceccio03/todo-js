@@ -138,3 +138,7 @@ function addTodo() {
     // }
     // render();
 }
+
+function changeHeader() {
+    document.querySelector('h1').innerHTML = 'lo sapevo che non avresti resistito';
+}
