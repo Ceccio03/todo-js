@@ -11,7 +11,7 @@ class MyArray {
         return newMyArray;
     }
     
-    static fromArgs(object) {
+    static fromObject(object) {
         const startingArray = Object.values(object);
         const newMyArray = new MyArray(startingArray);
 
