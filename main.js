@@ -63,6 +63,16 @@ function render() {
         deleteBtn.appendChild(deleteNode);
         div.appendChild(deleteBtn);
 
+        const detailBtn = document.createElement('button');
+        const detailNode = document.createTextNode('Dettaglio');
+        detailBtn.addEventListener('click', () => {
+            sessionStorage.setItem('selectedTodo', JSON.stringify(todo));
+            window.location.href = './detail.html';
+        });
+        
+        detailBtn.appendChild(detailNode);
+        div.appendChild(detailBtn);
+
         todoContainer.appendChild(div);
     }
 }
