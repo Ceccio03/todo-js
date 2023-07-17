@@ -1,16 +1,22 @@
 class Manager {
-    constructor(todoArray) {
-        if (!todoArray) {
-            const todos = StorageService.loadTodos();
+    constructor(todoArray = []) {
+        // if (!todoArray) {
+        //     const todos = StorageService.loadTodos();
 
-            if (todos) {
-                this.todoArray = todos;
-            } else {
-                this.todoArray = [];
-            }
-        } else {
-            this.todoArray = todoArray;
-        }
+        //     if (todos) {
+        //         this.todoArray = todos;
+        //     } else {
+        //         this.todoArray = [];
+        //     }
+        // } else {
+        //     this.todoArray = todoArray;
+        // }
+
+        // setInterval(() => {
+        //     console.log('sto salvando');
+        //     StorageService.saveData(this.todoArray)
+        // }, 5000);
+        this.todoArray = todoArray;
     }
 
     addToDo(todo) {

@@ -9,7 +9,12 @@
 //     manager = new Manager();
 // }
 
-let manager = new Manager();
+let manager;
+
+DBService.getAllTodos().then(todos => {
+    manager = new Manager(todos);
+    render();
+});
 
 console.log(document);
 
@@ -76,7 +81,6 @@ function render() {
         todoContainer.appendChild(div);
     }
 }
-render();
 
 // function render2() {
 //     const todoContainer = document.getElementById('todo-container'); 
