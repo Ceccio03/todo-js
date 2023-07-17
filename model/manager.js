@@ -40,8 +40,11 @@ class Manager {
     }
 
     deleteTodo(index) {
+        const todoToDelete = this.todoArray[index]
         this.todoArray.splice(index, 1);
-
+        DBService.deleteTodo(todoToDelete.id).then(() => {
+            this.todoArray.splice(index, 1);
+        });
         // StorageService.saveData(this.todoArray);
     }
 

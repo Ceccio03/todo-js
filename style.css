@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    height: 20%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@ main {
     display: flex;
     flex-direction: column;
     height: 90%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .spacer {
