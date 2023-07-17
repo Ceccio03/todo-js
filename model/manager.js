@@ -36,13 +36,13 @@ class Manager {
 
         todo.isCompleted = !todo.isCompleted;
 
-        StorageService.saveData(this.todoArray);
+        // StorageService.saveData(this.todoArray);
     }
 
     deleteTodo(index) {
         this.todoArray.splice(index, 1);
 
-        StorageService.saveData(this.todoArray);
+        // StorageService.saveData(this.todoArray);
     }
 
     addTodoWithTitle(title) {
@@ -50,6 +50,6 @@ class Manager {
         
         this.addToDo(newTodo);
 
-        StorageService.saveData(this.todoArray);
+        // StorageService.saveData(this.todoArray);
     }
 }

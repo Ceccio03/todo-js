@@ -47,7 +47,7 @@ function render() {
         div.appendChild(dateSpan);
 
         const completeBtn = document.createElement('button');
-        const completeNode = document.createTextNode(todo.isCompleted ? 'Completato' : ' Da Completare');
+        const completeNode = document.createTextNode(todo.isCompleted ? 'Da completare' : 'Completato');
         completeBtn.addEventListener('click', () => {
             manager.changeCompleteStatus(i);
             // StorageService.saveData(manager.todoArray);
@@ -128,7 +128,6 @@ function addTodo() {
     
     if (newTodoTitle.trim() !== '') {
         manager.addTodoWithTitle(newTodoTitle);
-        StorageService.saveData(manager.todoArray);
         title.value = '';
     }
     render();

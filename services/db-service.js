@@ -9,7 +9,7 @@ class DBService {
         const tempArray = [];
 
         for (const obj of genericArray) {
-            const newTodo = new Todo(obj.title, obj.isCompleted, new Date(obj.creationDate));
+            const newTodo = new Todo(obj.title, obj.isCompleted, new Date(obj.creationDate), obj.id);
 
             tempArray.push(newTodo);
         }
