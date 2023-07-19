@@ -28,7 +28,7 @@ class DBService {
     static updateTodo(todo) {
         const updateUrl = 'https://64b7ae3421b9aa6eb078ca81.mockapi.io/todos';
 
-        return fetch(updateUrl, {method: 'put', body: JSON.stringify(todo), headers: {'content-type': 'application/json; charset = UTF-8'}})
+        return fetch(updateUrl, {method: 'put', body: JSON.stringify(todo), headers: {'content-type': 'application/json'}})
         .then(resp => resp.json())
         .then(res => this.convertToTodo(res));
     }
@@ -37,7 +37,7 @@ class DBService {
     static saveTodo(todo) {
         const postUrl = 'https://64b7ae3421b9aa6eb078ca81.mockapi.io/todos';
 
-        return fetch(postUrl, {method: 'post', body: JSON.stringify(todo), headers: {'content-type': 'application/json; charset = UTF-8'}})
+        return fetch(postUrl, {method: 'post', body: JSON.stringify(todo), headers: {'content-type': 'application/json'}})
         .then(resp => resp.json())
         .then(res => this.convertToTodo(res));
     }

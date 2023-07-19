@@ -49,9 +49,17 @@ function render() {
         const completeBtn = document.createElement('button');
         const completeNode = document.createTextNode(todo.isCompleted ? 'Da completare' : 'Completato');
         completeBtn.addEventListener('click', () => {
-            manager.changeCompleteStatus(i);
-            // StorageService.saveData(manager.todoArray);
-            render();
+            const modifiedTodo = {...todo};
+
+            if (modifiedTodo.isCompleted === true) {
+                modifiedTodo.isCompleted = false;
+            } else {
+                modifiedTodo.isCompleted = true;
+            }
+            DBService.updateTodo(modifiedTodo).then(res => {
+                manager.changeCompleteStatus(i);
+                render();
+            });
         });
 
         completeBtn.appendChild(completeNode);
